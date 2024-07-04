@@ -1,0 +1,34 @@
+name: 'check-file-size'
+description: 'This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the current PR that lists all oversized files.'
+inputs:
+  github_token:
+    required: false
+    description: 'The GitHub token that will be used to create the comment if files exceeded the maximum file size'
+  directory:
+    required: false
+    description: 'The directory that will be recursively checked for oversized files'
+    default: './'
+  max_size:
+    required: false
+    description: 'The maximum allowed file size in kilobytes'
+    default: 16000
+  post_comment:
+    required: false
+    description: 'Whether the action should post a comment to the PR which lists the oversized files'
+    default: true
+  fail_on_find:
+    required: false
+    description: 'Whether the action should fail if files exceeding the maximum file size were found'
+    default: false
+  ignored_files:
+    required: false
+    description: 'A string array of files or directories that should not be checked'
+    default: ''
+outputs:
+  has_found_oversized_files:
+    description: 'A boolean that indicates whether oversized files have been found'
+  oversized_files:
+    description: 'A string array of the files that exceeded the maximum file size'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

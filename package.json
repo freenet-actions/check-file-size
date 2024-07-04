@@ -1,0 +1,26 @@
+{
+  "name": "check-file-size",
+  "version": "1.0.0",
+  "description": "This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the current PR that lists all oversized files.",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.ts --license licenses.txt && terser ./dist/index.js --compress --comments false --output ./dist/index.js"
+  },
+  "keywords": ["check", "file", "size", "filesize", "limit", "pr", "oversize", "oversized", "action"],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freenet-actions/check-file-size/issues"
+  },
+  "homepage": "https://github.com/freenet-actions/check-file-size#readme",
+  "dependencies": {
+    "@actions/core": "1.10.1",
+    "@actions/github": "6.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "0.38.1",
+    "terser": "5.31.1",
+    "typescript": "5.5.3",
+	"@types/node": "20.14.9"
+  }
+}
