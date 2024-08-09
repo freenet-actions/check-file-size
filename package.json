@@ -21,6 +21,6 @@
     "@vercel/ncc": "0.38.1",
     "terser": "5.31.3",
     "typescript": "5.5.4",
-	"@types/node": "20.14.11"
+	"@types/node": "20.14.14"
   }
 }
