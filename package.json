@@ -1,7 +1,7 @@
 {
   "name": "check-file-size",
   "version": "1.0.0",
-  "description": "This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the current PR that lists all oversized files.",
+  "description": "This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the triggering PR that lists all oversized files.",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.ts --license licenses.txt && terser ./dist/index.js --compress --comments false --output ./dist/index.js"

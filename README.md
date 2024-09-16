@@ -2,7 +2,7 @@
 
 [![LICENSE](https://img.shields.io/github/license/freenet-actions/check-file-size)](https://github.com/freenet-actions/check-file-size/blob/main/LICENSE)
 
-This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the current PR that lists all oversized files.
+This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the triggering PR that lists all oversized files.
 
 ## Inputs
 
