@@ -6,7 +6,6 @@ import { PathLike } from 'node:fs';
 type fileWithSize = { file: string, size: number };
 
 function getAllFilesIn(dir: string, allFilesList = []) {
-
   readdirSync(dir).map(file => {
     const name = dir + "/" + file;
     if(statSync(name).isDirectory() && !name.endsWith('/.git')) {
@@ -21,10 +20,12 @@ function getAllFilesIn(dir: string, allFilesList = []) {
   });
   return allFilesList;
 }
+
 async function main() {
   let oversizedFiles: fileWithSize[] = [];
 
   try {
+    const searchDirectory = getInput('directory', {required: false});
     let postComment = getInput('post_comment', {required: false}) == "true";
     const githubToken = getInput('github_token', {required: false});
 
@@ -58,7 +59,7 @@ async function main() {
       }
     }
 
-    const files: PathLike[] = getAllFilesIn(getInput('directory', {required: false}));
+    const files: PathLike[] = getAllFilesIn(searchDirectory);
 
     const filesWithSize: fileWithSize[] = files.map((file) => ({
       file: file as string,
@@ -95,6 +96,8 @@ ${oversizedFilesMessage.join('\n')}
           setFailed(`${oversizedFiles.length} files exceed the maximum allowed file size.`);
         }
       }
+    } else {
+      info(`No oversized files were found in directory '${searchDirectory}'.`);
     }
   } catch (error) {
     setFailed(error);
