@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "0.38.1",
-    "terser": "5.31.6",
+    "terser": "5.32.0",
     "typescript": "5.5.4",
 	"@types/node": "20.16.5"
   }
