@@ -1,0 +1,21 @@
+name: Check for Oversized Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-for-oversized-files:
+    name: Check for Oversized Files
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v4
+      - name: Check for Oversized Files
+        uses: freenet-actions/check-file-size@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_find: true
+          max_size: 8000
