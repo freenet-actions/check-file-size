@@ -19,3 +19,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_find: true
           max_size: 8000
+          post_comment: false
