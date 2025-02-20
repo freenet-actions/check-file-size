@@ -1,6 +1,6 @@
 {
   "name": "check-file-size",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "This action checks all files in a configurable directory (recursively) for a configurable maximum file size. It also allows to automatically add a comment to the triggering PR that lists all oversized files.",
   "main": "index.js",
   "scripts": {
