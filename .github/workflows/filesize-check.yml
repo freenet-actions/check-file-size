@@ -12,7 +12,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout Branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Check for Oversized Files
         uses: freenet-actions/check-file-size@v1
         with:
