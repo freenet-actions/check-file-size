@@ -36,7 +36,7 @@ This action checks all files in a configurable directory (recursively) for a con
 By default, if oversized files have been found, the job will continue and a comment listing these files will be posted to the PR.
 
 ```yaml
-uses: freenet-actions/check-file-size@v1
+uses: freenet-actions/check-file-size@v2 # Please pin a commit hash instead.
 with:
   github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -46,7 +46,7 @@ with:
 If oversized files have been found, the job will continue but not post a comment. The files can always be seen in the workflow logs.
 
 ```yaml
-uses: freenet-actions/check-file-size@v1
+uses: freenet-actions/check-file-size@v2 # Please pin a commit hash instead.
 with:
   max_size: 32000
   post_comment: false
@@ -55,7 +55,7 @@ with:
 ### Checking all files in `directory` except for 3 specific ones and 1 specific subdirectory
 
 ```yaml
-uses: freenet-actions/check-file-size@v1
+uses: freenet-actions/check-file-size@v2 # Please pin a commit hash instead.
 with:
   github_token: ${{ secrets.GITHUB_TOKEN }}
   directory: directory
@@ -71,7 +71,7 @@ with:
 This example uses a different syntax to define the ignored files. **Both syntaxes are valid**.
 
 ```yaml
-uses: freenet-actions/check-file-size@v1
+uses: freenet-actions/check-file-size@v2 # Please pin a commit hash instead.
 with:
   github_token: ${{ secrets.GITHUB_TOKEN }}
   directory: ./

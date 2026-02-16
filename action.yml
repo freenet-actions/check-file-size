@@ -30,5 +30,5 @@ outputs:
   oversized_files:
     description: 'A string array of the files that exceeded the maximum file size'
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
